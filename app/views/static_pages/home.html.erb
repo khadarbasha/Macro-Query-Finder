@@ -1,0 +1,49 @@
+<div class="row-fluid">
+  <div class="span7">
+    <%= image_tag("home.png", :alt => "home",:class => "home" )%>
+  </div>
+  <div class="span5">
+  
+<div class="center hero-unit startGame">
+    
+  <h3>Want to play ?</h3>
+  <% if user_signed_in? %>
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Game rules
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Game Rules!!!</h4>
+      </div>
+      <div class="modal-body" style="text-align:left;" >
+        
+  Your task is to hit the url as top of search result in the given time-line. For Each successful hit, your score will be the length of search query. Ideally user must hit more url's, with less score in fewer attempts.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+  <%= link_to "Start Game!", prepare_game_path, class: "btn btn-medium btn-primary", :id=> "start_game" %><p></p>
+  <%=image_tag("tcs.png")%>
+  
+  <%else%>
+  <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-medium btn-primary" %>
+  <% end %>
+</div>
+
+<strong><p class="text-info" style="
+    font-size: 19px;
+">Leader Board<p></strong>
+ <%= render :partial => 'home/score_card', :locals => { :player_list => get_top_scorers_list } %> 
+ 
+    </div>
+  </div>
+

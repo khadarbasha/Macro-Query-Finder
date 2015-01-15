@@ -1,0 +1,23 @@
+<div class="search_results">
+  <% if @search_results != nil %>
+    <% size = @search_results.size %>
+    <% @search_results.each do |result| %>
+      <% size = size-1 %>
+      <% a_class = "strong" %>
+      <% h5_class = "text-success" %>
+      <% p_class = "strong" %>
+      <% if result[:Hit] == true %>
+        <% a_class = "text-success" %>
+        <% p_class = "text-success" %>
+        <% h5_class = "text-success" %>
+      <% end %>
+      <a href= <%= result[:Url] %> > <h4 class = <%= a_class %> > <%= result[:Title] %> </h4></a>
+      <h5 class= <%= h5_class %> > <%= result[:DisplayUrl] %></h5>
+      <p class = <%= p_class %> > <%=  result[:Description] %></p>
+      <% if size > 0 %>
+        <div class="divider"></div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+

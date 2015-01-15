@@ -1,0 +1,27 @@
+<div id="url_list_table">
+  <table class="table table-striped well">
+    <thead>
+      <tr>  
+        <th >Key Word</th>
+        <th width="10">Score</th>  
+        <th>URL</th>
+      </tr>  
+    </thead>
+    <tbody>
+      <% url_list.each do |url| %>
+        <% clr = "text-error" %>
+        <% clr = "text-success" if url.hit %>
+        <tr>
+          <td><p style="max-width:300px;" class= <%=clr%> ><%= url.query %></p></td>
+          <td width="10"><p style="text-align:center;" class= <%=clr%> ><%= url.score %></p></td>
+          <td><p style="max-width:300px;"class= <%=clr%> ><%= url.name %></p></td>
+        </tr>
+        <% end%>
+        <tr>
+          <td></td>
+          <td width="10"> <strong><p class="text-info" style="text-align:center;"><%= calculate_score %></p><strong></td>
+          <td> <strong><p class="text-info">Current Score </p></strong></td>
+        </tr>
+    </tbody>
+  </table>
+</div>

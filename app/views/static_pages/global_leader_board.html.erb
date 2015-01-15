@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="span 4">
+  </div>
+  <div class="span 4">
+<div id="score_card_table">
+      <table class="table table-hover table-striped well home_page_table">
+          <thead>
+            <tr>
+              <th>Player Name</th>
+              <th>Score</th>
+              <th>URL Hits</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @players_list = get_top_scorers_list %>
+          <% @players_list.each do |player| %>
+            <tr>
+              <td><%= player.name %> </td>
+              <td><%= player.score %></td>
+              <td><%= player.hits %></td>
+            </tr>
+            <% end%>
+          </tbody>
+      </table>
+    </div>
+
+</div>
+</div>

@@ -1,0 +1,15 @@
+<div class="row-fluid">
+  <div class="span6">
+    <strong><p class="text-info" style="
+    font-size: 19px;
+">Your submissions<p></strong>
+
+  <%= render :partial => 'user_score_card', :locals => { :url_list => get_urls } %> 
+  </div>
+  <div class="span6">
+  <strong><p class="text-info" style="
+    font-size: 19px;
+">Leader Board<p></strong>
+    <%= render :partial => 'home/score_card', :locals => { :player_list => get_top_scorers_list } %>
+    </div> 
+</div>

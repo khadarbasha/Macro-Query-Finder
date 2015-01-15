@@ -1,0 +1,2 @@
+class CurrentUrlListController < ApplicationController
+end

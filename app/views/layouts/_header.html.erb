@@ -1,0 +1,21 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <%= link_to "Macro Query Finder",game_root_path , id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <% if signed_in? %>
+          <li><%= link_to "Home", game_root_path %></li>
+          <li><%= link_to "My Submissions", home_user_submissions_path %></li>
+           <li><%= link_to "Profile", edit_user_registration_path %></li>
+            <li>
+                  <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+                </li>
+          <% else %>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

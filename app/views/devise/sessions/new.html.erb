@@ -1,0 +1,16 @@
+<div class="row-fluid">
+  <div class="span6 offset3">
+<h3>Sign in</h3>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<%= render 'shared/error_messages' %>
+  <%= f.label :email %>
+  <%= f.email_field :email, :autofocus => true,:autocomplete => "off" %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %></br>
+
+  <%= f.submit "Sign In", class: "btn btn-medium btn-primary" %>
+   <p>New user? <%= link_to "Sign up now!", new_user_registration_path %></p>
+<% end %>
+  </div>
+</div>
